@@ -1,0 +1,28 @@
+{% extends 'base.twig' %}
+
+{% block main %}
+<div class="nom_titre">
+        <h2 class="titre">Evenements</h2>
+</div>
+<div class="evenement">
+        {% for evenement in evenements %}
+        <div class="pose_event">
+                <div class="carte_event">
+                        <p><strong>{{evenement.nom_event}}</strong></p>
+                        <p>{{evenement.desc_event}}</p>
+                        <p>{{evenement.ville_event}}</p>
+                        <p>{{evenement.rue_event}}</p>
+                        <p>{{evenement.date_event}}</p>
+                        <div class="place_bouton">
+                                <a class="boutton" href="event_detail.php">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        En savoir +</a>
+                        </div>
+                </div>
+        </div>
+        {% endfor %}
+</div>
+{% endblock main %}

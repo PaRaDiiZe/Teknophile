@@ -1,0 +1,80 @@
+{% extends 'base.twig' %}
+
+{% block main %}
+<div class="nom_titre">
+        <h2 class="titre">Derniers articles</h2>
+</div>
+<div class="vetement">
+        {% for vetement in vetements %}
+        <div class="pose_vet">
+                <a href="vet_detail.php?id={{vetement.id_vetement}}" class="vet_index">
+                        <div class="carte">
+                                <h3>{{vetement.nom_vet}}</h3>
+                                <p><img src="{{vetement.photo_vet}}" alt="vetements"></p>
+                                <p class="prix">{{vetement.prix_vet}}€</p>
+                        </div>
+                </a>
+        </div>
+        {% endfor %}
+</div>
+<div class="place_bouton">
+        <a href="vetements.php" class="bouton">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Voir tout les articles</a>
+</div>
+
+
+<div class="index_event1">
+        <div class="nom_titre">
+                <h2 class="titre">Evenements</h2>
+        </div>
+        <div class="index_event">
+                {% for evenement in evenements %}
+                {% if loop.first %}
+                <ul>
+                        <li>{{evenement.nom_event}}</li>
+                        <li>{{evenement.ville_event}}</li>
+                        <li>{{evenement.rue_event}}</li>
+                        <li><strong>{{evenement.nom}}</strong></li>
+                        <li><strong>{{evenement.genre}}</strong></li>
+                </ul>
+                {% else %}
+                {% if evenement.nom_event == evenements[loop.index0 -1].nom_event %}
+                <li><strong>{{evenement.nom}}</strong></li>
+                <li><strong>{{evenement.genre}}</strong></li>
+                {% else %}
+                <ul>
+                        <li>{{evenement.nom_event}}</li>
+                        <li>{{evenement.ville_event}}</li>
+                        <li>{{evenement.rue_event}}</li>
+                        <li><strong>{{evenement.nom}}</strong></li>
+                        <li><strong>{{evenement.genre}}</strong></li>
+                        {% endif %}
+                </ul>
+                {% endif %}
+                {% endfor %}
+        </div>
+        <div class="place_bouton">
+                <a href="evenements.php" class="bouton">Voir tout les évènements
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                </a>
+        </div>
+</div>
+<div class="index_news">
+        <div class="nom_titre">
+                <h2 class="titre">Newsletter</h2>
+        </div>
+        <div class="news_place">
+                <form class="news_index" method="post" action="newsletter.php" role="newsletter">
+                        <input type="text" name="Email" placeholder="Votre Email">
+                        <input type="submit" name="S'abonner" value="S'abonner">
+                </form>
+        </div>
+</div>
+{% endblock %}

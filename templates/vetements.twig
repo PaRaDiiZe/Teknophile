@@ -1,0 +1,32 @@
+{% extends 'base.twig' %}
+
+
+{% block main %}
+<div class="nom_titre">
+    <h2 class="titre">Nos articles</h2>
+</div>
+
+<p>Nombre d'articles : {{nombre.nombre}}</p>
+
+<div class="vetement">
+    {% for vetement in vetements %}
+    <div class="pose_vet">
+        <div class="carte">
+            <h3>{{vetement.nom_vet}}</h3>
+            <p><img src="{{vetement.photo_vet}}" alt="vetements"></li>
+                <p class="prix">{{vetement.prix_vet}}€</p>
+                <p>{{vetement.genre_vet}}</p>
+                <div class="place_bouton">
+                    <p><a href="vet_detail.php?id={{vetement.id_vetement}}?genre_vet={{vetement.genre_vet}}"
+                            class="voir">Voir l'article
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </a></p>
+                </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock main %}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
+
+    <title>Teknophile</title>
+</head>
+
+<body>
+    <header>
+        <div class="head">
+            <img src="./asset/images/background/comet.png" alt="comete">
+            <img src="./asset/images/background/astronaute.png" alt="astronaute">
+            <img src="./asset/images/background/vaisseau.png" alt="vaisseau">
+            <h1>Teknophile</h1>
+        </div>
+        <div class="menu">
+            <nav class="nav_principal" role="navigation" aria-label="menu_deroulant">
+                <ul>
+                    <li><a href="index.php">Accueil</a></li>
+                    <li class="deroule"><a href="vetements.php">Vêtements ﹀</a>
+                        <ul class="deroulant">
+                            <li><a href="vetements.php?genre_vet=Tekno">Tekno
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </a></li>
+                            <li><a href="vetements.php?genre_vet=Dubstep">Dubstep</a></li>
+                            <li><a href="vetements.php?genre_vet=Hard">Hard</a></li>
+                            <li><a href="vetements.php?genre_vet=Teuf">Teuf</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="evenements.php">Evènements</a></li>
+                    <li><a href="panier.php">Panier</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="body" role="mise_en_forme">
+            {% block main %}
+            {% endblock %}
+        </div>
+    </main>
+    <footer role="contentinfo">
+        <div class="footer">
+            <ul class="list_footer">
+                <li><a href="index.php" aria-label="accueil">Accueil</a></li>
+                <li><a href="vetements.php" aria-label="vêtements">Vêtements</a></li>
+                <li><a href="evenements.php" aria-label="evènements">Evènements</a></li>
+            </ul>
+            <div class="news_footer">
+                <h1>Newsletter</h1>
+                <p>Recevez les dernières actualités</p>
+                <div class="news_footer_place">
+                    <form method="post" action="newsletter.php" role="newsletter">
+                        <input type="text" name="Email" placeholder="Votre Email">
+                        <input type="submit" name="S'abonner" value="Ok">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

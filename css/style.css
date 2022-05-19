@@ -1,0 +1,613 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+img[alt="vetements"] {
+    height: 170px;
+}
+
+
+.body {
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-bottom: 50px;
+}
+
+main {
+    background-color: hsla(0, 0%, 32%, .15);
+}
+
+/* ---------------------------------------------------------------------------------- header -------------------------------------------------------------------------------------------*/
+.head {
+    background: url("../asset/images/background/background.jpg");
+    color: transparent;
+    width: 100%;
+    height: 500px;
+    font-family: 'Rubik Glitch', cursive;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.head h1 {
+    letter-spacing: 5px;
+    font-weight: 200;
+    font-size: 80px;
+    -webkit-text-stroke: 1px #55db44;
+    z-index: 1;
+}
+
+/* ---------------------------------------------------------------------------------- footer -------------------------------------------------------------------------------------------*/
+footer {
+    background-color: black;
+}
+
+.footer {
+    color: white;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer a {
+    text-decoration: none;
+    color: white;
+}
+
+.news_footer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+
+.news_footer input[type="submit"] {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 15px;
+    text-align: center;
+}
+
+.news_footer input[type="text"] {
+    border: none;
+    padding: 15px;
+}
+
+.list_footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px;
+}
+
+/* ---------------------------------------------------------------------------------- Animation header ---------------------------------------------------------------------------------*/
+
+.head img {
+    position: absolute;
+}
+
+img[alt="comete"] {
+    top: 267px;
+    left: -200px;
+    width: 200px;
+    animation: comet-move 20s 5s forwards infinite;
+}
+
+@keyframes comet-move {
+    from {
+        transform: translateX(-200px);
+    }
+    to {
+        transform: translate(2000px, -200px);
+        filter: hue-rotate(360deg);
+    }
+}
+
+
+img[alt="astronaute"] {
+    top: 40px;
+    right: -400px;
+    width: 150px;
+    animation: astronaute-move 50s forwards infinite;
+}
+
+@keyframes astronaute-move {
+    from {
+        transform: translateX(-200px);
+    }
+    to {
+        transform: translate(-2000px, 100px)
+        rotate(-360deg);
+    }
+}
+
+img[alt="vaisseau"] {
+    top: -300px;
+    width: 80px;
+    animation: vaisseau-move 10s 20s forwards infinite;
+    
+}
+@keyframes vaisseau-move {
+    from {
+        transform: translateY(800px);
+    }
+    to {
+        transform: translateY(5500px, 100px);
+        filter: hue-rotate(360deg);
+    }
+}
+
+/* ---------------------------------------------------------------------------------- Boutons ----------------------------------------------------------------------------------*/
+.place_bouton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 85px;
+}
+.place_bouton a{
+    position: relative;
+    color: black;
+    background-color: white;
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    width: 187px;
+    text-align: center;
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.18); 
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.18);
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+
+.place_bouton a span {
+    display: block;
+    position: absolute;
+    background: black;
+}
+
+.place_bouton a span:nth-child(1)
+{
+    left: 0;
+    bottom: 0;
+    width: 1px;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.5s;
+}
+
+.place_bouton a:hover span:nth-child(1)
+{
+    transform: scaleY(1);
+    transform-origin: top;
+    transition: transform 0.5s;
+    
+}
+
+.place_bouton a span:nth-child(2)
+{
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;
+    
+}
+
+.place_bouton a:hover span:nth-child(2)
+{
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 0.5s;
+    
+}
+
+.place_bouton a span:nth-child(3)
+{
+    right: 0;
+    bottom: 0;
+    width: 1px;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.5s;
+    transition-delay: 0.5s;
+}
+
+.place_bouton a:hover span:nth-child(3)
+{
+    transform: scaleY(1);
+    transform-origin: bottom;
+    transition: transform 0.5s;
+    transition-delay: 0.5s;
+}
+
+.place_bouton a span:nth-child(4)
+{
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;
+    transition-delay: 0.5s;
+}
+
+.place_bouton a:hover span:nth-child(4)
+{
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 0.5s;
+    transition-delay: 0.5s;
+}
+
+/* ---------------------------------------------------------------------------------- Début déroulant ----------------------------------------------------------------------------------*/
+
+.nav_principal {
+    height: 46px;
+}
+
+.nav_principal a {
+    text-decoration: none;
+    color: black;
+    width: 200px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+.nav_principal ul {
+    list-style: none;
+    display: flex;
+}
+
+.nav_principal li {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    /*Permet de garder tout les menu car si absolute il n'y a plus que boutique*/
+}
+
+.nav_principal li:hover .deroulant>li {
+    display: block;
+    /*permet d'afficher les li*/
+
+}
+
+.nav_principal a span {
+    display: block;
+    position: absolute;
+    background: black;
+}
+
+.nav_principal a span:nth-child(1)
+{
+    left: 0;
+    bottom: 0;
+    width: 1px;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.5s;
+}
+
+.deroulant li {
+    display: none;
+    position: relative;
+}
+
+.deroulant {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    padding: 0%;
+    padding-top: 20px;
+    gap: 20px;
+    background: white;
+    /*Placer les sous menu juste en dessous des catégories*/
+}
+/* ---------------------------------------------------------------------------------- Fin déroulant -----------------------------------------------------------------------------------*/
+
+
+/* ---------------------------------------------------------------------------------- 404 ----------------------------------------------------------------------------------------------*/
+
+.erreur404 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 90px;
+    gap: 25px;
+}
+
+img[alt="404"] {
+    width: 35rem;
+}
+
+
+.place_bouton_erreur {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 85px;
+}
+
+.bouton_erreur {
+    position: relative;
+    color: black;
+    background-color: white;
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    width: 425px;
+    text-align: center;
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.18); 
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.18);
+}
+
+.place_bouton_erreur a span:nth-child(1)
+{
+    left: 0;
+    bottom: 0;
+    width: 1px;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.5s;
+}
+
+.place_bouton_erreur a:hover span:nth-child(1)
+{
+    transform: scaleY(1);
+    transform-origin: top;
+    transition: transform 0.5s;
+}
+
+.place_bouton_erreur a span:nth-child(2)
+{
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;
+}
+
+.place_bouton_erreur a:hover span:nth-child(2)
+{
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 0.5s;
+}
+
+.place_bouton_erreur a span:nth-child(3)
+{
+    right: 0;
+    bottom: 0;
+    width: 1px;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.5s;
+    transition-delay: 0.5s;
+}
+
+.place_bouton_erreur a:hover span:nth-child(3)
+{
+    transform: scaleY(1);
+    transform-origin: bottom;
+    transition: transform 0.5s;
+    transition-delay: 0.5s;
+}
+
+.place_bouton_erreur a span:nth-child(4)
+{
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;
+    transition-delay: 0.5s;
+}
+
+.place_bouton_erreur a:hover span:nth-child(4)
+{
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 0.5s;
+    transition-delay: 0.5s;
+}
+
+/* ------------------------------------------------------------------------------------ Index ----------------------------------------------------------------------------------------- */
+
+h2 {
+    margin-top: 90px;
+    text-align: center;
+    font-family: 'Koulen', cursive;
+    letter-spacing: 2px;
+}
+
+.index a {
+    text-decoration: none;
+}
+
+.index ul, li {
+    list-style: none;
+}
+
+
+.nom_titre {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5rem;
+}
+
+.titre {
+    background-color: black;
+    color: white;
+    width: 15%;
+    padding: 1rem 2rem ;
+    box-shadow: 0px 0px 19px -3px rgba(0,0,0,0.7);
+}
+.vet_index {
+    text-decoration: none;
+}
+/* ------------------------------------------------------------------------------------ Vetement -------------------------------------------------------------------------------------- */
+.index_vetement {
+    display: flex;
+    justify-content: space-around;
+}
+/* ------------------------------------------------------------------------------------ Evenement ------------------------------------------------------------------------------------ */
+.index_event1 {
+    margin-top: 5rem;
+}
+
+.index_event {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* ------------------------------------------------------------------------------------ Newsletter ------------------------------------------------------------------------------------ */
+.index_news {
+    margin-top: 5rem;
+    margin-bottom: 90px;
+}
+
+.news_place {
+    display: flex;
+    justify-content: center;
+}
+
+
+.news_index input::placeholder {
+    color: rgb(114, 114, 114);
+}
+
+.news_index input[type="submit"] {
+    background: black;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 15px;
+    text-align: center;
+}
+
+.news_index input[type="text"] {
+    border: none;
+    padding: 15px;
+}
+
+.bouton {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* ------------------------------------------------------------------------------------ Vetement ------------------------------------------------------------------------------------ */
+.vetement {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pose_vet {
+    flex: 2 0 15%;
+    margin: 97px;
+    margin-bottom: 300px;
+    height: 140px;
+}
+
+.carte {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    margin: auto;
+    padding-top: 5px;
+    text-align: center;
+    background: white;
+    border-radius: 3%;
+}
+
+.carte h3 {
+    color: black;
+}
+
+.prix {
+    color: grey;
+    font-size: 22px;
+}
+
+
+.carte_sim {
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    max-width: 500px;
+    width: 300px;
+    margin: auto;
+    padding-top: 5px;
+    text-align: center;
+    background: white;
+    border-radius: 3%;
+}
+
+/* ------------------------------------------------------------------------------------ Evenement ------------------------------------------------------------------------------------ */
+.evenement {
+    display: flex;
+    flex-wrap: wrap;
+}
+.pose_event {
+    flex: 2 0 15%;
+    margin: 97px;
+    margin-bottom: 300px;
+    height: 140px;
+}
+
+
+.carte_event {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: auto;
+    padding: 1px;
+    text-align: center;
+    background: white;
+    border-radius: 3%;
+    width: 500px;
+}
+
+/* ------------------------------------------------------------------------------------ Commentaire ----------------------------------------------------------------------------------- */
+.place_comment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.comment {
+    text-align: center;
+    width: 185px;
+}
+
+.formulaire {
+    display: flex;
+    justify-content: center;
+}

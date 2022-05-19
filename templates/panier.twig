@@ -1,0 +1,16 @@
+{% extends 'base.twig' %}
+
+{% block main %}
+<div class="nom_titre">
+    <h2 class="titre">Mon panier</h2>
+</div>
+<div class="carte">
+    {% for commande in commande %}
+    <p><strong>{{commande.nom_vet}}</strong></p>
+    <img src="{{commande.photo_vet}}" alt="vetements">
+    <p>{{commande.prix_vet}}€</p>
+    {% endfor %}
+</div>
+<h2>Prix total : {{prix_total.prix_total}}€</h2>
+
+{% endblock main %}

@@ -1,0 +1,60 @@
+{% extends 'base.twig' %}
+
+{% block main %}
+
+<div class="nom_titre">
+    <h2 class="titre">{{vetement.nom_vet}}</h2>
+</div>
+<div class="carte">
+    <p><img src="{{vetement.photo_vet}}" alt="vetements"></p>
+    <p>{{vetement.description_vet}}</p>
+    <p>{{vetement.prix_vet}}€</p>
+    <p>{{vetement.nom_type}}</p>
+    <div class="place_bouton">
+        <a href="ajout_panier.php?id={{vetement.id_vetement}}" class="bouton">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Ajouter au panier</a>
+    </div>
+</div>
+<div class="nom_titre">
+    <h2 class="titre">Commentaire</h2>
+</div>
+<div class="place_comment">
+{% for commentaire in commentaire %}
+<div class="comment">
+    <p><strong>{{commentaire.nom_user}}</strong></p>
+    <p>{{commentaire.texte_commentaire}}</p>
+    <p>{{commentaire.date_comment|date("d/m/Y")}}</p>
+</div>
+{% endfor %}
+</div>
+<div class="formulaire">
+    <form method="post" action="reception.php?id_vetement={{vetement.id_vetement}}" role="commentaire">
+        <p>
+            <input type="text" name="nom_user" placeholder="Votre nom" autocomplete="given-name">
+        </p>
+        <p>
+            <textarea name="texte_comment" rows="12" cols="20" placeholder="Votre commentaire"></textarea>
+        </p>
+        <input type="submit" name="Envoyer" value="Envoyer">
+    </form>
+</div>
+
+
+<h2>Articles similaire</h2>
+
+<div class="vetement">
+    {% for genre in genre %}
+    <div class="carte_sim">
+        <a href="vet_detail.php?id={{vetement.id_vetement}}">
+            <p>{{genre.nom_vet}}</p>
+            <p><img src="{{genre.photo_vet}}" alt="vetements"></p>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock main %}
